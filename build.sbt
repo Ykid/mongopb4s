@@ -28,8 +28,8 @@ lazy val commonSettings = Seq(
     scalapb.gen(
       flatPackage = true,
       javaConversions = false,
-      grpc = true,
-      singleLineToProtoString = true) -> (sourceManaged in Compile).value
+      grpc = false,
+      singleLineToProtoString = true) -> (sourceManaged in Test).value
   )
 )
 
@@ -42,7 +42,7 @@ lazy val mongo = (project in file(".")).
     version := "1.0.6",
     libraryDependencies ++= Seq(
       // scalapb
-      "com.thesamet.scalapb" %% "scalapb-json4s" % "0.7.0",
+      "com.thesamet.scalapb" %% "scalapb-json4s" % scalapb.compiler.Version.scalapbVersion,
       // mongo-scala-driver
       "org.mongodb.scala" %% "mongo-scala-driver" % "2.1.0",
       // Rx

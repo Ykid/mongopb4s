@@ -1,7 +1,7 @@
 package com.github.mingchuno.mongopb4s.codec
 
 import com.google.protobuf.ByteString
-import scalapb.json4s._
+import scalapb.json4s.JsonFormat
 import scalapb.{GeneratedMessage, GeneratedMessageCompanion, Message}
 import org.bson.codecs.{Codec, DecoderContext, EncoderContext}
 import org.bson.{BsonReader, BsonType, BsonWriter}
